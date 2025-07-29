@@ -11,35 +11,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     @yield('styles')
 </head>
+
 <body>
     <input type="checkbox" id="nav-toggle">
-
     <div class="sidebar">
         <div class="sidebar-brand">
-            <h2><span class="las la-compass"></span> <span>Menú</span></h2>
+            <h2>
+                <span class="las la-compass"></span> 
+                <span>Menú</span>
+            </h2>
         </div>
         <div class="sidebar-menu">
             <ul>
-                <li><a href="{{ route('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}"><span class="las la-home"></span><span>Dashboard</span></a></li>
-                <li><a href="#"><span class="las la-trophy"></span><span>Ranking</span></a></li>
-                <li><a href="#"><span class="las la-life-ring"></span><span>Soporte</span></a></li>
-                <li><a href="#"><span class="las la-store"></span><span>Tienda</span></a></li>
-                <li><a href="#"><span class="las la-plus-circle"></span><span>Crear Curso</span></a></li>
+                <li>
+                    <a href="{{ route('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}">
+                        <span class="las la-home"></span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="las la-trophy"></span>
+                        <span>Ranking</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="las la-life-ring"></span>
+                        <span>Soporte</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="las la-store"></span>
+                        <span>Tienda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('courses.create') }}" class="{{ Request::is('cursos/crear') ? 'active' : '' }}">
+                        <span class="las la-plus-circle"></span>
+                        <span>Crear Curso</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
-
     <div class="main-content">
         <header>
             <div class="header-logo-container">
                 <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="header-logo">
             </div>
-            
             <div class="search-wrapper">
                 <span class="las la-search"></span>
                 <input type="search" placeholder="Buscar cursos...">
             </div>
-
             <div class="user-actions">
                 <span class="las la-university" title="Mis Cursos"></span>
                 <label for="nav-toggle" class="nav-toggle-label">
@@ -48,12 +73,10 @@
                 <span class="las la-user-circle" title="Mi Perfil"></span>
             </div>
         </header>
-
         <main>
             @yield('content')
         </main>
     </div>
-
     @yield('scripts')
 </body>
 </html>
