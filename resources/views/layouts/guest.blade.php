@@ -12,7 +12,7 @@
     @yield('styles')
 </head>
 <body>
-    <div class="guest-container">
+    <div class="login-wrapper">
         @yield('content')
     </div>
     
